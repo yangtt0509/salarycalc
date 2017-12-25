@@ -8,7 +8,7 @@
 	<title>工资管理</title>
 	<link rel="stylesheet" href="/static/css/frozen.css">
 	{% block css %}
-	<script src="/static/js/frozen.js"></script>
+	{% endblock %}
 </head>
 
 <body ontouchstart>
@@ -28,9 +28,14 @@
 			</li>
 		</ul>
 	</footer>
+	<section class="ui-container">
 	{% block content %}
+	{% endblock %}
+	</section>
 	<!-- /.ui-container-->
 	{% block script %}
+	{% endblock %}
+	<script src="/static/js/frozen.js"></script>
 	<script>
 		$('.ui-list li,.ui-tiled li').click(function() {
 			if ($(this).data('href')) {
