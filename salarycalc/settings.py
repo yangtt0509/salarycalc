@@ -25,7 +25,7 @@ SECRET_KEY = '-r*usnet)z*ku0=!fyr0s_=e#4f40u%6f$@z8je(4vf0!cm(wj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

@@ -2,8 +2,10 @@ from django.db import models
 
 OVERTIME_FACTOR = 1.5
 
+
 class Employee(models.Model):
     name = models.CharField(max_length=30)
+    available = models.BooleanField(default=True)
 
 
 class Product(models.Model):
@@ -19,8 +21,8 @@ class Product(models.Model):
 
 
 class SalaryItem(models.Model):
-    employee = models.ForeignKey(Employee)
-    product = models.ForeignKey(Product)
+    employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     complete = models.FloatField()
     is_overtime = models.BooleanField(default=False)
     date = models.DateField()

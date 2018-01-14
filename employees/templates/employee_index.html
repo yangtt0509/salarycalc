@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% block content %}
+		<section id="list">
+            {{ msg }}
+			<table class="ui-table ui-border-tb">
+                <thead>
+                    <th>姓名</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    {% for employee in employees %}
+                    <tr>
+                        <td>{{ employee.name }}</td>
+                        <td><a href="/employees/delete/{{ employee.id }}" class="ui-btn">删除</a></td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+		</section>
+{% endblock %}

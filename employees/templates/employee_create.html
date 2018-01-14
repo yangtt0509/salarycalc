@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="ui-form-item ui-form-item-show ui-border-b">
+            <label for="#">员工姓名</label>
+            <input type="text" name="employee_name" placeholder="请输入员工姓名">
+        </div>
+        <button class="ui-btn-lg" type="submit">Add</button>
+    </form>
+{% endblock %}
