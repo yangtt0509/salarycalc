@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="ui-form-item ui-form-item-show ui-border-b">
+            <label for="#">产品名</label>
+            <input type="text" name="product_name" placeholder="请输入产品名">
+        </div>
+        <div class="ui-form-item ui-form-item-show ui-border-b">
+            <label for="#">总价</label>
+            <input type="text" name="unit_price" placeholder="请输入总价">
+        </div>
+        <div class="ui-form-item ui-form-item-show ui-border-b">
+            <label for="#">个数/重量</label>
+            <input type="text" name="unit" placeholder="请输入个数/重量">
+        </div>
+        <div class="ui-form-item ui-form-item-radio ui-border-b">
+            <label class="ui-radio" for="radio">
+                <input type="radio" name="work_type" value="0" checked>
+            </label>
+            <p>按数量</p>
+        </div>
+        <div class="ui-form-item ui-form-item-radio ui-border-b">
+            <label class="ui-radio" for="radio">
+                <input type="radio" name="work_type" value="1">
+            </label>
+            <p>按重量</p>
+        </div>
+        <div class="ui-form-item ui-form-item-radio ui-border-b">
+            <label class="ui-radio" for="radio">
+                <input type="radio" name="work_type" value="2">
+            </label>
+            <p>按时间</p>
+        </div>
+
+        <button class="ui-btn-lg" type="submit">Add</button>
+    </form>
+{% endblock %}

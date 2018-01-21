@@ -1,4 +1,5 @@
 from django.db import models
+from products.models import Product
 
 OVERTIME_FACTOR = 1.5
 
@@ -6,18 +7,6 @@ OVERTIME_FACTOR = 1.5
 class Employee(models.Model):
     name = models.CharField(max_length=30)
     available = models.BooleanField(default=True)
-
-
-class Product(models.Model):
-    WORK_TYPE_CHOICES = (
-        (0, 'count'),
-        (1, 'weight'),
-        (2, 'time')
-    )
-    name = models.CharField(max_length=100)
-    unit_price = models.FloatField()
-    unit = models.FloatField(default=1)
-    work_type = models.IntegerField(choices=WORK_TYPE_CHOICES)
 
 
 class SalaryItem(models.Model):

@@ -1,22 +1,23 @@
 {% extends 'layout.html' %}
 {% block content %}
     <section id="list">
-        {{ msg }}
         <div class="ui-btn-wrap">
-            <a class="ui-btn-lg ui-btn-primary" href="/employees/create">
+            <a class="ui-btn-lg ui-btn-primary" href="/products/create">
                 添加
             </a>
         </div>
         <table class="ui-table ui-border-tb">
             <thead>
-            <th>姓名</th>
-            <th></th>
+            <th>产品名</th>
+            <th>总价</th>
+            <th>个数</th>
             </thead>
             <tbody>
-            {% for employee in employees %}
+            {% for product in products %}
                 <tr>
-                    <td>{{ employee.name }}</td>
-                    <td><a href="/employees/delete/{{ employee.id }}" class="ui-btn">删除</a></td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.unit_price }}</td>
+                    <td>{{ product.unit }} {{ product.work_type_str }}</td>
                 </tr>
             {% endfor %}
 
